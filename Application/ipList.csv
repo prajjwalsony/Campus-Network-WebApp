@@ -1,0 +1,8 @@
+id,name,ip,message
+1,contact0,,"['@S:hi', '@R:hello', '@R:hello', '@R:praj', '@S:test', '@R:test', '@R:this is new text', '@R:test1', '@R:test1', '@S:h1', '@S:g1', '@S:hi', '@S:hi', '@S:hi', '@S:hi', '@S:hi', '@S:hi', '@S:hi', '@S:hi', '@S:1', '@S:hello']"
+2,contact1,192.168.103.248,['@S:sendFroma']
+124,aman,192.168.27.248,"['@S:hi', '@R:hello', '@R:hello', '@R:praj', '@S:test', '@R:test', '@R:dffgsf', '@R:dffgsf', '@S:hi aman', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:hi prajj', '@R:awe', '@S:asw', '@S:hi aman ', '@S:r studio', '@R:dd', '@R:hello', '@R:hello prajjwal, this is aman']"
+123,contact7058,127.0.0.1,"['@R:this is new text', '@R:test1', '@R:test1', '@R:hiRohan', '@R:h1', '@R:g1', '@R:hi', '@R:hi', '@R:hi', '@R:hi', '@R:hi', '@R:hi', '@R:hi', '@R:hi', '@R:1', '@R:hello']"
+5,testing,192.168.209.230,"['@R:None', '@R:hello from%phone', '@R:hello2']"
+620,contact2,192.168.199.248,"['@R:hi aman', '@R:hi prajj', '@R:hi aman2']"
+1234556,Testing ,127.0.0.1,[]
