@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.2em;
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2[align="right"] {
+            text-align: right;
+            background-color: #e0f7fa;
+        }
+        h2[align="left"] {
+            text-align: left;
+            background-color: #fce4ec;
+        }
+        i {
+            font-style: italic;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <h2>{{ message }}</h2>
+     <!-- <h2>124,contact2,192.168.203.248,"['@S:hi', '@R:hello', '@R:hello', '@R:praj', '@S:test', '@R:test', '@R:dffgsf', '@R:dffgsf', '@R:im prajj']"</h2> -->
+</body>
+
+<script>
+    let message = document.querySelector("h2").textContent;
+    message = message.split(',');
+    let name = document.querySelector("h1").textContent;
+    let body = document.querySelector("body");
+    body.innerHTML = "";
+
+    let newelmnt = document.createElement("h1");
+    newelmnt.setAttribute("align", "center");
+    newelmnt.textContent = name;
+    body.appendChild(newelmnt)
+
+    message[0] = message[0].replace('"[', ' ');
+    message[message.length -1] = message[message.length -1].replace(']"', ' ');
+    for(let j=0; j<message.length; j++){
+        let i = message[j];
+        let newmessage = document.createElement("h2");
+        if(i[3] === 'S') {
+            newmessage.innerHTML = `<i>You</i><br>`+i.slice(5,-1);
+            newmessage.setAttribute("align", "right");
+        }
+        else {
+            newmessage.innerHTML = `<i>${name}</i><br>`+i.slice(5,-1);
+            newmessage.setAttribute("align", "left");
+        }
+        body.appendChild(newmessage)
+    }
+</script>
+
+</html>

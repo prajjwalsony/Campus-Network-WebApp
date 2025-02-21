@@ -1,0 +1,382 @@
+<html>
+
+<head>
+<meta charset="UTF-8"> 
+<title>Chessboard using Pure CSS and HTML</title>
+
+<style type="text/css">
+
+.inline{
+    display: inline-block;
+}
+
+.black:hover{
+    background-color: #fade5d;
+    cursor: pointer;
+}
+
+.white:hover{
+    background-color: #fade5d;
+    cursor: pointer;
+}
+
+
+.chessboard {
+    width: 640px;
+    height: 640px;
+    margin: 20px;
+    border: 25px solid #333;
+}
+.black {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+      font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+    <h3>Enter IP of other player</h3>
+    <input id="IP1" type="number" value="127">.
+    <input id="IP2" type="number" value="0">.
+    <input id="IP3" type="number" value="0">.
+    <input id="IP4" type="number" value="1">
+    <button onclick="start()">CLICK TO START</button><h6></h6>
+    <h3 id="sending"   style="color: rgb(84, 84, 84);"><b>WAITING...</b></h3>
+    <h3 id="receiving"   style="color: rgb(84, 84, 84);"><b>WAITING...</b></h3>
+
+    <div class="chessboard">
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="a1">♖</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="b1">♘</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="c1">♗</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="d1">♕</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="e1">♔</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="f1">♗</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="g1">♘</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="h1">♖</div>
+        <!-- <!-- 2nd row -       -->
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="a2">♙</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="b2">♙</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="c2">♙</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="d2">♙</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="e2">♙</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="f2">♙</div>
+        <div class="black cell" data-cell-color="WHITE" data-cell-index="g2">♙</div>
+        <div class="white cell" data-cell-color="WHITE" data-cell-index="h2">♙</div>
+        <!-- <!-- 3rd row -       -->
+        <div class="white cell" data-cell-color="" data-cell-index="a3"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="b3"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="c3"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="d3"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="e3"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="f3"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="g3"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="h3"></div>
+        <!-- <!-- 4th row -     data-cell-color=""   -->
+        <div class="black cell" data-cell-color="" data-cell-index="a4"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="b4"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="c4"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="d4"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="e4"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="f4"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="g4"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="h4"></div>
+        <!-- <!-- 5th row -       -->
+        <div class="white cell" data-cell-color="" data-cell-index="a5"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="b5"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="c5"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="d5"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="e5"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="f5"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="g5"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="h5"></div>
+        <!-- <!-- 6th row -       -->
+        <div class="black cell" data-cell-color="" data-cell-index="a6"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="b6"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="c6"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="d6"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="e6"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="f6"></div>
+        <div class="black cell" data-cell-color="" data-cell-index="g6"></div>
+        <div class="white cell" data-cell-color="" data-cell-index="h6"></div>
+        <!-- <!-- 7th row -       -->
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="a7">♟</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="b7">♟</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="c7">♟</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="d7">♟</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="e7">♟</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="f7">♟</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="g7">♟</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="h7">♟</div>
+        <!-- <!-- 8th row -       -->
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="a8">♜</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="b8">♞</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="c8">♝</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="d8">♛</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="e8">♚</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="f8">♝</div>
+        <div class="black cell" data-cell-color="BLACK" data-cell-index="g8">♞</div>
+        <div class="white cell" data-cell-color="BLACK" data-cell-index="h8">♜</div>
+    </div>
+    
+</body>
+
+
+
+
+
+<script>
+    //-----------------GLOBAL VARIABLES------------------------
+    var STATUS = {current: "", selected: ""}  //My currentSituation
+    var PLAYED = {from: "", to: ""}     //played starting and ending position
+    var cond=0,     //condition when==0: non of the box is selected ? when==1 any of the box is selected
+     start_cell,    //selected box
+     start_bgColor, //background color of selected box
+     start_color    //color of the piece whose box is selected
+
+
+    function updateLastSavedIP(){
+        let lastIP = localStorage.getItem("lastSavedIP") //127.0.0.1
+        if(lastIP == null) return;
+        lastIP = lastIP.split(".")
+        document.querySelector("#IP1").value = lastIP[0]
+        document.querySelector("#IP2").value = lastIP[1]
+        document.querySelector("#IP3").value = lastIP[2]
+        document.querySelector("#IP4").value = lastIP[3]
+    }
+    updateLastSavedIP()
+
+
+
+
+
+
+
+    
+    // ------------------------FUNCTIONS FOR CONTROLLING BOX SELECTION, HOWERING AND UPDATION OF myCurrentSituation------------------------
+
+    //BOX SELECTION, DESELECTION, MOVING PIECE AND UPDATING selected VALUE OF STATUS
+    document.querySelectorAll(".cell").forEach(cell=>{cell.addEventListener("click", async (event)=>{
+        if (cond==0){
+            start_cell = event.target
+            let start_cellValue = start_cell.innerHTML
+            if(start_cellValue == "") return;       //if cell doesn't contain any piece then don't go ahed
+
+            start_color = start_cell.getAttribute("data-cell-color")
+            start_bgColor = start_cell.style.backgroundColor
+            start_cell.style.backgroundColor = "#469E2B"
+            STATUS.selected = event.target.getAttribute("data-cell-index")
+            cond = 1
+        }
+        else if(cond==1){
+            if(event.target == start_cell){         //if the clicked cell is already selected then deselect it or clear any selection
+                event.target.style.backgroundColor = start_bgColor;
+                STATUS.selected = ""
+                cond = 0;
+                return;
+            }
+            if(event.target.getAttribute("data-cell-color") == start_color) return;        //if the clicked cell contains the piece of same color which the current selected cell contains then don't go ahed and continue in same situation
+
+            STATUS.selected = ""
+            PLAYED.from = start_cell.getAttribute("data-cell-index");
+            PLAYED.to = event.target.getAttribute("data-cell-index")
+            response = await fetch(`http://localhost:5000/updateGameStatus?gameStatus=${JSON.stringify(PLAYED)}`)      //sent the updated moves to server so that opponent can update
+            // console.log(await response.text())
+
+            event.target.setAttribute("data-cell-color", start_color)       //data-cell-color is the color of the piece it contains
+            event.target.textContent = start_cell.textContent
+
+            start_cell.style.backgroundColor = start_bgColor
+            start_cell.textContent = ""
+            start_cell.setAttribute("data-cell-color", "")
+            cond = 0
+        }             
+})})
+
+
+//UPDATE THE hower VALUE OF STATUS
+function updateStatus(event) { //status = clicked/hower
+    STATUS.current = event.target.getAttribute("data-cell-index")
+    return;
+}
+document.querySelectorAll(".cell").forEach(cell=>{cell.addEventListener("mouseenter", updateStatus)})
+
+
+
+
+
+// ------------------------ASYNCHRONOUS FUNCTIONS FOR CONTROLLING DATA TRANSFER------------------------
+
+
+//UTILITIES FUNCTIONS
+
+function delay(ms=100) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//GET THE CELL HAVING GIVEN INDEX
+function getElement(index) {
+    const cells = document.querySelectorAll(".cell");
+    for (const cell of cells) {
+        if (String(index) == String(cell.getAttribute("data-cell-index"))) {
+            // console.log(cell)
+            return cell;
+        }
+    }
+    return null; // Return null if no element is found
+}
+
+//UPDATE THE BACKGROUND COOLOR OF GIVEN ELEMENT
+function assignColor(element, color){
+    // if(!element || !color) return;
+    try{
+        element.style.backgroundColor = color;
+        return;
+    }
+    catch{
+        return
+    }
+
+}
+
+
+//RECEIVE THE CURRENT SITUATION OF OPPONENT AND SHOW IN THE MyBoard
+async function receiveCurrentSituation() {      //defined in async so as to run and update continously in seperate thread or parallelly
+    let prevHower, prevHower_color;
+    let prevSelected, prevSelected_color;
+    let IP1 = document.querySelector("#IP1").value
+    let IP2 = document.querySelector("#IP2").value
+    let IP3 = document.querySelector("#IP3").value
+    let IP4 = document.querySelector("#IP4").value
+    let IP = `${IP1}.${IP2}.${IP3}.${IP4}`
+    localStorage.setItem("lastSavedIP", IP)
+    let URL = `http://${IP}:5000/receiveCurrentSituation`
+
+    while(true){        //run forevear
+
+        await delay();
+        try{
+            response = await fetch(URL)
+            response = await response.json()
+        }
+        catch{
+            document.querySelector("#receiving").innerHTML = "<b>Unable To Receive Data From Opponent!!!</b>"
+            document.querySelector("#receiving").style.color = "red"
+            continue;
+        }
+
+        document.querySelector("#receiving").innerHTML = "<b>Actively Receiving Data From Opponent</b>"
+        document.querySelector("#receiving").style.color = "lightgreen"
+
+        let howerElement = await getElement(response['current'])
+        let selectElement = await getElement(response['selected'])
+        
+        await assignColor(prevHower, prevHower_color)
+        await assignColor(prevSelected, prevSelected_color)
+        try{prevHower_color = howerElement.style.backgroundColor} catch{}
+        try{prevSelected_color = selectElement.style.backgroundColor} catch{}
+
+        if(howerElement == selectElement){
+            await assignColor(selectElement, "#FF3727")
+        }
+        else{
+            await assignColor(howerElement, "#FF8E55")
+            await assignColor(selectElement, "#FF3727")
+        }
+        
+        prevHower = howerElement
+        prevSelected = selectElement
+    }
+    
+}
+
+
+//UPDATE THE MY CURRENT STATUS IN BACKEND SO THAT OPPONENT CAN KNOW MY CURRENT SITUATION
+async function updateCurrentSituation() {       //defined in async so as to run and update continously in seperate thread or parallelly
+    while(true){
+        await delay();
+        try{
+            response = await fetch(`http://localhost:5000/updateCurrentSituation?currentSituation=${JSON.stringify(STATUS)}`)
+            document.querySelector("#sending").innerHTML = "<b>Actively Sending Data To Opponent</b>"
+            document.querySelector("#sending").style.color = "lightgreen"
+        }
+        catch(error){
+            document.querySelector("#sending").innerHTML = "<b>Unable To Send Data To Opponent!!!</b>"
+            document.querySelector("#sending").style.color = "red"
+        }
+    }
+}
+
+
+async function receiveGameStatus() {
+    let prevHower, prevHower_color;
+    let prevSelected, prevSelected_color;
+    let IP1 = document.querySelector("#IP1").value
+    let IP2 = document.querySelector("#IP2").value
+    let IP3 = document.querySelector("#IP3").value
+    let IP4 = document.querySelector("#IP4").value
+    let IP = `${IP1}.${IP2}.${IP3}.${IP4}`
+    localStorage.setItem("lastSavedIP", IP)
+    let URL = `http://${IP}:5000/receiveGameStatus`
+
+    while(true){        //run forevear
+
+        await delay();
+        try{
+            response = await fetch(URL)
+            response = await response.json()
+        }
+        catch(error){
+            document.querySelector("#receiving").innerHTML = "<b>Unable To Receive Data From Opponent!!!</b>"
+            document.querySelector("#receiving").style.color = "red"
+            continue;
+        }
+
+        document.querySelector("#receiving").innerHTML = "<b>Actively Receiving Data From Opponent</b>"
+        document.querySelector("#receiving").style.color = "lightgreen"
+        
+        let startCell = await getElement(response['from'])
+        let endCell = await getElement(response['to'])
+
+
+        if(!startCell || !endCell) continue;
+        if(startCell.innerHTML == "") continue;
+        endCell.setAttribute("data-cell-color", startCell.getAttribute("data-cell-color"))
+        endCell.innerHTML = startCell.innerHTML
+        startCell.setAttribute("data-cell-color", "")
+        startCell.innerHTML = ""
+    }
+    
+}
+
+
+
+function start(){
+    receiveCurrentSituation()
+    updateCurrentSituation()
+    receiveGameStatus()
+}
+
+
+</script>
+
+</html>
