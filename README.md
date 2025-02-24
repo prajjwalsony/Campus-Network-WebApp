@@ -35,4 +35,4 @@ Documentation >> "Detailed Report.docx"  or  [Click Here](https://github.com/pra
 ## Download
 
 You can download the project from the following link:
-[Download BotBreak](https://github.com/prajjwalsony/Campus-Network-WebApp/archive/refs/heads/main.zip)
+[Download](https://github.com/prajjwalsony/Campus-Network-WebApp/archive/refs/heads/main.zip)
