@@ -13,7 +13,7 @@ def updateGameStatus():
     try:
         gameStatus = request.args.get('gameStatus')
         PLAYED.update(eval(gameStatus))
-        return "UPDATED"
+        return "UPDATED" 
     except Exception as e:
         return str(e)
 
@@ -35,4 +35,5 @@ def receiveCurrentSituation():
     return jsonify(STATUS)
 
 if __name__ == '__main__':
+
     app.run(debug=True, host='0.0.0.0', port=PORT)
